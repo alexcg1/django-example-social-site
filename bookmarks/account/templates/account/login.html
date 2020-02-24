@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% block title %}
+    Log-in
+{% endblock %} 
+
+{% block content %}
+    <h1>Log-in</h1>
+    <p>Please, use the following form to log-in:</p>
+        <form action="." method="post" class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            {% comment %} <p> {% endcomment %}
+            {% buttons %}
+            <input type="submit" value="Log in" class="btn btn-primary" />
+            {% endbuttons %}
+            {% comment %} </p> {% endcomment %}
+    </form>
+{% endblock %}
