@@ -25,7 +25,7 @@ SECRET_KEY = 'ji9cu$1b4@^2@22)m!m%b!95*9f*6z2$3j&c^9+x=ctl*fp^2^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Serve media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend'
+    'social_core.backends.facebook.FacebookOAuth2',
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '2589919274665235'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'xxx'

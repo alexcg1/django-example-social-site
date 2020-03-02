@@ -37,11 +37,23 @@
       {% else %}
       <a href="{% url "login" %}">Login</a>
       {% endif %}
+    <p>Welcome to your dashboard</p>
     </li>
     </ul>
 {% endif %}
   </div>
 </nav>  
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">
+        {{ message | safe }}
+          <a href="#" class="close">x</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
 
  {% comment %} <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">Bookmarks</a>
