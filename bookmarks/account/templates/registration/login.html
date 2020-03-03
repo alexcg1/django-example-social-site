@@ -25,4 +25,11 @@
         </form>
     </div>
     <p><a href="{% url "password_reset" %}">Forgotten your password?</a></p>
+
+    <div class="social">
+        <ul>
+            <li class="facebook"><a href="{% url "social:begin" "facebook" %}">Sign up with Facebook</a></li>
+        </ul>
+    </div>
+
 {% endblock content %}
